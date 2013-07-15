@@ -1,1 +1,2 @@
 site :opscode
+cookbook 'yum'
