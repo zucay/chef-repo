@@ -6,3 +6,8 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+%w[git bash].each do |pkg|
+  package pkg do
+    action :install
+  end
+end
