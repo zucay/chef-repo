@@ -50,17 +50,18 @@ end
 end
 
 execute "rbenv install #{RUBY_VERSION}" do
-  command "rbenv install #{RUBY_VERSION}"
+  not_if "source /etc/profile.d/rbenv.sh; rbenv versions | grep #{RUBY_VERSION}"
+  command "source /etc/profile.d/rbenv.sh; rbenv install #{RUBY_VERSION}"
   action :run
-  not_if { ::File.exists?("/root/.rbenv/versions/#{RUBY_VERSION}") }
+
 end
 
 execute "rbenv global " do
-  command "rbenv global #{RUBY_VERSION}"
+  command "source /etc/profile.d/rbenv.sh; rbenv global #{RUBY_VERSION}"
   action :run
 end
 
 execute "rbenv rehash" do
-  command "rbenv rehash"
+  command "source /etc/profile.d/rbenv.sh; rbenv rehash"
   action :run
 end
