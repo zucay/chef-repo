@@ -2,6 +2,15 @@
   "sources": {
     "yum": {
       "locked_version": "2.3.0"
+    },
+    "mysql": {
+      "locked_version": "3.0.2"
+    },
+    "openssl": {
+      "locked_version": "1.0.2"
+    },
+    "build-essential": {
+      "locked_version": "1.4.0"
     }
   }
 }
