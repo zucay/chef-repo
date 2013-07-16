@@ -1,5 +1,13 @@
-{"run_list":[
-    "yum::epel"
-    , "basic::default"
-    , "ruby::default"
-]}
+{
+    "mysql": {
+	"server_root_password": "user"
+	, "server_repl_password": "user"
+	, "server_debian_password": "user"
+    }, 
+    "run_list":[
+	"yum::epel"
+	, "basic::default"
+	, "ruby::default"
+	, "mysql::server"
+    ]
+}
